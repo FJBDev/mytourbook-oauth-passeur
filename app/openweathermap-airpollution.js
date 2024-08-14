@@ -4,21 +4,21 @@ const xss = require('xss');
 function airPollution(request, response) {
 
     const openWeatherMapBaseUrl = 'https://api.openweathermap.org/data/2.5/air_pollution/history';
-    var url = openWeatherMapBaseUrl + '?appid=' + process.env.OPENWEATHERMAP_KEY;
+    let url = `${openWeatherMapBaseUrl}?appid=${process.env.OPENWEATHERMAP_KEY}`;
 
     if (request.query.lat) {
-        url += '&lat=' + xss(request.query.lat);
+        url += `&lat=${xss(request.query.lat)}`;
     }
     if (request.query.lon) {
-        url += '&lon=' + xss(request.query.lon);
+        url += `&lon=${xss(request.query.lon)}`;
     }
     if (request.query.start) {
-        url += '&start=' + xss(request.query.start);
+        url += `&start=${xss(request.query.start)}`;
     }
     if (request.query.end) {
-        url += '&end=' + xss(request.query.end);
+        url += `&end=${xss(request.query.end)}`;
     }
-    var config = {
+    let config = {
         method: 'get',
         url: url
     };

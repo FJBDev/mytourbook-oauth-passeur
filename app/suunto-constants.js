@@ -8,8 +8,11 @@ function define(name, value) {
 define("suuntoBaseUrl", 'https://cloudapi.suunto.com/v2/');
 
 
-//TODO FB segregate the suunto route upload and file download to separate file
+/*
+TODO FB segregate the suunto route upload and file download to separate file
 
-// Segregate the strava endpoints
+ Segregate the strava endpoints
 
-// Unit tests for the workout import (using mock?)
+ Unit tests for the workout import (using mock?)
+
+ */

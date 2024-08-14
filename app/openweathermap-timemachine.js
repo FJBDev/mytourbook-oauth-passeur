@@ -8,22 +8,22 @@ function timeMachine(request, response) {
         return;
     }
     const openWeatherMapBaseUrl = 'https://api.openweathermap.org/data/2.5/onecall/timemachine';
-    var url = openWeatherMapBaseUrl + '?units=metric&appid=' + process.env.OPENWEATHERMAP_KEY;
+    let url = `${openWeatherMapBaseUrl}?units=metric&appid=${process.env.OPENWEATHERMAP_KEY}`;
 
     if (request.query.lat) {
-        url += '&lat=' + xss(request.query.lat);
+        url += `&lat=${xss(request.query.lat)}`;
     }
     if (request.query.lon) {
-        url += '&lon=' + xss(request.query.lon);
+        url += `&lon=${xss(request.query.lon)}`;
     }
     if (request.query.dt) {
-        url += '&dt=' + xss(request.query.dt);
+        url += `&dt=${xss(request.query.dt)}`;
     }
     if (request.query.lang) {
-        url += '&lang=' + xss(request.query.lang);
+        url += `&lang=${xss(request.query.lang)}`;
     }
 
-    var config = {
+    let config = {
         method: 'get',
         url: url
     };
